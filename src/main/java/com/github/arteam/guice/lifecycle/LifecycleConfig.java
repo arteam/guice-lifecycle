@@ -28,8 +28,8 @@ public abstract class LifecycleConfig {
 
     public abstract void configure();
 
-    protected boolean addStartTask(@NotNull StartTask startTask) {
-        return registry.getStartTasks().add(startTask);
+    protected boolean addStartupTask(@NotNull StartupTask startupTask) {
+        return registry.getStartupTasks().add(startupTask);
     }
 
     protected boolean addShutdownTask(@NotNull ShutdownTask shutdownTask) {

@@ -9,12 +9,12 @@ import org.jetbrains.annotations.NotNull;
  *
  * @author Artem Prigoda
  */
-public abstract class StartTask extends NamedTask {
+public abstract class StartupTask extends NamedTask {
 
-    protected StartTask() {
+    protected StartupTask() {
     }
 
-    protected StartTask(@NotNull String name) {
+    protected StartupTask(@NotNull String name) {
         super(name);
     }
 

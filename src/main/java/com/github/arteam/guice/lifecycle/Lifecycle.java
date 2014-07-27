@@ -64,7 +64,7 @@ public class Lifecycle {
             if (tasksAreStarted) {
                 throw new IllegalStateException("Start tasks have already been performed");
             }
-            for (StartTask task : registry.getStartTasks()) {
+            for (StartupTask task : registry.getStartupTasks()) {
                 try {
                     task.start();
                 } catch (Exception e) {

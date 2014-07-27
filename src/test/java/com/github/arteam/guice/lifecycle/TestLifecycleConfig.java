@@ -18,13 +18,13 @@ public class TestLifecycleConfig extends LifecycleConfig {
 
     @Override
     public void configure() {
-        addStartTask(new StartTask("start-http-client") {
+        addStartupTask(new StartupTask("start-http-client") {
             @Override
             public void start() throws Exception {
                 httpClient.start();
             }
         });
-        addStartTask(new StartTask() {
+        addStartupTask(new StartupTask() {
             @Override
             public void start() throws Exception {
                 mqClient.registerHandler();

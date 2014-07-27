@@ -18,14 +18,14 @@ import java.util.List;
 public class LifecycleRegistry {
 
     @NotNull
-    private List<StartTask> startTasks = Collections.synchronizedList(new ArrayList<StartTask>());
+    private List<StartupTask> startupTasks = Collections.synchronizedList(new ArrayList<StartupTask>());
 
     @NotNull
     private List<ShutdownTask> shutdownTasks = Collections.synchronizedList(new ArrayList<ShutdownTask>());
 
     @NotNull
-    public List<StartTask> getStartTasks() {
-        return startTasks;
+    public List<StartupTask> getStartupTasks() {
+        return startupTasks;
     }
 
     @NotNull

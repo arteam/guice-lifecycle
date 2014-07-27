@@ -2,7 +2,7 @@ package com.github.arteam.guice.lifecycle.bogus;
 
 import com.github.arteam.guice.lifecycle.LifecycleConfig;
 import com.github.arteam.guice.lifecycle.ShutdownTask;
-import com.github.arteam.guice.lifecycle.StartTask;
+import com.github.arteam.guice.lifecycle.StartupTask;
 import com.google.inject.Inject;
 
 /**
@@ -18,7 +18,7 @@ public class BogusLifecycleConfig extends LifecycleConfig {
 
     @Override
     public void configure() {
-        addStartTask(new StartTask("start-bogus") {
+        addStartupTask(new StartupTask("start-bogus") {
             @Override
             public void start() throws Exception {
                 bogusTask.start();
