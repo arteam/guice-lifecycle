@@ -1,5 +1,6 @@
 package com.github.arteam.guice.lifecycle;
 
+import com.github.arteam.guice.lifecycle.bogus.BogusLifecycleConfig;
 import com.google.common.eventbus.EventBus;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
@@ -91,5 +92,35 @@ public class LifecycleTest {
         } else {
             Assert.fail("Should have been exception on second initialization");
         }
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testCorrectOrder() {
+        Lifecycle lifecycle = injector.getInstance(Lifecycle.class);
+        lifecycle.performShutdownTasks();
+    }
+
+    @Test
+    public void testErrorInStartupTask() {
+        Injector bogusInjector = Guice.createInjector(new AbstractModule() {
+            @Override
+            protected void configure() {
+                bind(LifecycleConfig.class).to(BogusLifecycleConfig.class);
+            }
+        });
+        bogusInjector.getInstance(Lifecycle.class).performStartTasks();
+    }
+
+    @Test
+    public void testErrorInShutdownTask() {
+        Injector bogusInjector = Guice.createInjector(new AbstractModule() {
+            @Override
+            protected void configure() {
+                bind(LifecycleConfig.class).to(BogusLifecycleConfig.class);
+            }
+        });
+        Lifecycle lifecycle = bogusInjector.getInstance(Lifecycle.class);
+        lifecycle.performStartTasks();
+        lifecycle.performShutdownTasks();
     }
 }
