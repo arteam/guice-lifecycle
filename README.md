@@ -7,9 +7,6 @@ Basic Lifecycle implementation for Guice
 public class TestLifecycleConfig extends LifecycleConfig {
 
     @Inject
-    private HttpClient httpClient;
-
-    @Inject
     private MQClient mqClient;
 
     @Override
