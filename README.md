@@ -1,4 +1,4 @@
-guice-lifecycle
+guice-lifecycle [![Build Status](https://travis-ci.org/arteam/guice-lifecycle.png?branch=master)](https://travis-ci.org/arteam/guice-lifecycle)
 ===============
 Basic Lifecycle implementation for Guice
 
