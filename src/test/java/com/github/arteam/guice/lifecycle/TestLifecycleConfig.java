@@ -5,7 +5,8 @@ import com.google.inject.Inject;
 /**
  * Date: 7/26/14
  * Time: 11:45 PM
- *
+ * Lifecycle config for tests
+ * 
  * @author Artem Prigoda
  */
 public class TestLifecycleConfig extends LifecycleConfig {
